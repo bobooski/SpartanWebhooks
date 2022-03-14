@@ -1,0 +1,5 @@
+[webhook]
+url = ""
+
+[general]
+debug = false
