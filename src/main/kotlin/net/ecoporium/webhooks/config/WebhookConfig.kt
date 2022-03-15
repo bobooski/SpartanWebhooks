@@ -4,6 +4,7 @@ import club.minnced.discord.webhook.send.WebhookEmbed
 import club.minnced.discord.webhook.send.WebhookEmbed.EmbedAuthor
 import club.minnced.discord.webhook.send.WebhookEmbed.EmbedField
 import club.minnced.discord.webhook.send.WebhookEmbed.EmbedFooter
+import com.electronwill.nightconfig.core.Config
 import com.electronwill.nightconfig.core.file.FileConfig
 import me.clip.placeholderapi.PlaceholderAPI
 import org.bukkit.entity.Player
@@ -12,13 +13,13 @@ import java.util.stream.Collectors
 
 class WebhookConfig(private val config: FileConfig) {
 
-    fun contentFor(player: Player): String {
+    fun contentFor(player: Player?): String {
         val content: String = config["content"]
-        return PlaceholderAPI.setPlaceholders(player, content)
+        return if (player == null) content else PlaceholderAPI.setPlaceholders(player, content)
     }
 
     fun embedFor(player: Player): WebhookEmbed {
-        val rawFields: List<FileConfig> = config["embed.fields"]
+        val rawFields: List<Config> = config["embed.fields"]
         val fields: List<EmbedField> = rawFields.stream()
             .map { embedField(it, player) }.collect(Collectors.toList())
 
@@ -36,7 +37,7 @@ class WebhookConfig(private val config: FileConfig) {
         )
     }
 
-    private fun embedField(config: FileConfig, player: Player): EmbedField {
+    private fun embedField(config: Config, player: Player): EmbedField {
         val inline: Boolean? = config["inline"]
         val name: String = config["name"]
         val value: String = config["value"]
@@ -58,10 +59,12 @@ class WebhookConfig(private val config: FileConfig) {
         )
     }
 
-    private fun embedAuthor(player: Player): EmbedAuthor {
-        val name: String = config["embed.author.name"]
+    private fun embedAuthor(player: Player): EmbedAuthor? {
+        val name: String? = config["embed.author.name"]
         val iconUrl: String? = config["embed.author.icon_url"]
         val url: String? = config["embed.author.url"]
+
+        if (name == null) return null
 
         return EmbedAuthor(
             PlaceholderAPI.setPlaceholders(player, name),

@@ -11,13 +11,16 @@ version = "2.0"
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
     maven { url = uri("https://repo.extendedclip.com/content/repositories/placeholderapi/") }
+    maven { url = uri("https://repo.triumphteam.dev/snapshots/") }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
     compileOnly("me.clip:placeholderapi:2.11.1")
+    compileOnly(files("libs/SpartanAPI.jar"))
 
     // kotlin
     implementation(kotlin("stdlib-jdk8"))
@@ -29,6 +32,9 @@ dependencies {
 
     // discord library
     implementation("club.minnced:discord-webhooks:0.7.5")
+
+    // triumph commands
+    implementation("dev.triumphteam:triumph-cmd-bukkit:2.0.0-SNAPSHOT")
 }
 
 java {
