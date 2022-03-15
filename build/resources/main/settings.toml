@@ -1,6 +1,0 @@
-[webhook]
-url = "This needs to be set the settings.toml file"
-
-[general]
-violation-threshold = 10
-debug = false
