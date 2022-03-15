@@ -6,12 +6,11 @@ However, it will include many new features which are attractive:
 * JSON based embed configuration
     * Popular builders like [this one](https://glitchii.github.io/embedbuilder/) can now be utilized
     * Supports non-embed messages too!
-* Only one webhook is sent per user every few seconds
-    * Limits 429s and makes it easier to keep track of messages
+* Embed sending now respects Discord's limits
+    * Should now no longer trigger rate limiting errors (429s)
+    * Embeds will be collapsed to one message, allowing more to be sent without triggering 429s!
 * More configuration options & cleaner configuration
-    * Change how often a user's webhook is sent
-    * No more hunting for essential fields to modify
-    * Toggle if certain checks report to webhooks
+    * Configuration is now done through a [TOML](https://toml.io/) file
 * Placeholders managed by [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI)
     * Easier to use and more flexible placeholders that can also be utilized in other plugins
 * And many, many more to come!
@@ -24,5 +23,5 @@ function on different versions at your leisure.
 
 ## Build Instructions
 - Clone the repository
-- Use the command `gradlew clean shadowJar` to build
+- Use the command `gradlew clean build` to build
 - The outputted JAR will be in the `{projectRoot}/build/libs` folder by default
