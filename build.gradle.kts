@@ -31,7 +31,7 @@ dependencies {
     implementation("com.electronwill.night-config:json:3.6.5")
 
     // discord library
-    implementation("club.minnced:discord-webhooks:0.7.5")
+    implementation("club.minnced:discord-webhooks:0.8.0")
 
     // triumph commands
     implementation("dev.triumphteam:triumph-cmd-bukkit:2.0.0-SNAPSHOT")

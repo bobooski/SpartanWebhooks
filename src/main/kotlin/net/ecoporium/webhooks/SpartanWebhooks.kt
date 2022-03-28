@@ -1,5 +1,6 @@
 package net.ecoporium.webhooks
 
+import club.minnced.discord.webhook.WebhookClient
 import dev.triumphteam.cmd.bukkit.BukkitCommandManager
 import net.ecoporium.webhooks.command.WebhookCommand
 import net.ecoporium.webhooks.config.SettingsConfig
@@ -20,6 +21,13 @@ class SpartanWebhooks : JavaPlugin() {
         val handler = ViolationHandler(this)
         fileManager.reload()
         if (server.pluginManager.getPlugin("PlaceholderAPI") != null) WebhooksExpansion(this, handler).register()
+
+        WebhookClient.setDefaultErrorHandler { _, _, throwable ->
+            if (getSettingsConfig().debug && throwable != null) {
+                throwable.printStackTrace()
+            }
+        }
+
         server.pluginManager.registerEvents(handler, this)
 
         BukkitCommandManager.create(this).registerCommand(WebhookCommand(this, handler))

@@ -2,6 +2,8 @@ package net.ecoporium.webhooks.manager
 
 import club.minnced.discord.webhook.WebhookClient
 import club.minnced.discord.webhook.send.WebhookEmbed
+import club.minnced.discord.webhook.send.WebhookMessage
+import club.minnced.discord.webhook.send.WebhookMessageBuilder
 import net.ecoporium.webhooks.SpartanWebhooks
 import java.io.IOException
 
@@ -15,11 +17,11 @@ class WebhookManager(private val plugin: SpartanWebhooks) {
         plugin.server.scheduler.runTaskTimerAsynchronously(plugin, this::runQueue, 0L, period)
     }
 
-    private fun send(content: String, embeds: MutableList<WebhookEmbed>) {
+    private fun send(content: String, message: WebhookMessage) {
         try {
             val client = WebhookClient.withUrl(plugin.getSettingsConfig().webhookUrl)
             if (content.isNotEmpty()) client.send(content)
-            client.send(embeds.first())
+            client.send(message)
         } catch (exception: IOException) {
             if(plugin.getSettingsConfig().debug) exception.printStackTrace()
         }
@@ -27,13 +29,13 @@ class WebhookManager(private val plugin: SpartanWebhooks) {
 
     private fun runQueue(): () -> Unit = {
         if (webhooks.isNotEmpty()) {
-            val embeds = mutableListOf<WebhookEmbed>()
+            val messageBuilder = WebhookMessageBuilder()
             val amount: Int = if (webhooks.size > 10) 10 else webhooks.size
+            val content = webhooks.first().first
             for (i in 0 until amount) {
-                val webhook = webhooks.removeAt(i)
-                embeds.add(webhook.second)
+                messageBuilder.addEmbeds(webhooks.removeAt(i).second)
             }
-            send(webhooks.first().first, embeds)
+            send(content, messageBuilder.build())
         }
     }
 
