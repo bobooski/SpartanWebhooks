@@ -20,7 +20,14 @@ This newer version will also rely on Paper, instead of Spigot in
 order to make use of some newer features like Components that Spigot
 still fails to support. Only the latest Minecraft version will be provided
 support and actively maintained. You can modify/rebuild the project to
-function on different versions at your leisure.
+function on different versions at your leisure.  
+  
+## Limitations
+- Only supports the latest Minecraft version (1.18.2)
+- Download in release is built with Java 17, and as such is not compatible with all versions of Java
+- Only supports Spigot, Paper, and Forge
+- Requires [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI)
+- Content section is only sent once per grouping of embeds, and has placeholders replaced corresponding to the user of hte first embed
 
 ## Build Instructions
 - Clone the repository
