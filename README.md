@@ -1,4 +1,4 @@
-![Spartan Webhooks Logo](https://i.imgur.com/8TGWdvP.png)  
+<p align="center"><img src="https://i.imgur.com/8TGWdvP.png" alt="Spartan Webhooks Logo"/></p>
   
 This version of Spartan Webhooks is a complete rewrite
 mainly in the Kotlin language for ease for programming.
