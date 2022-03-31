@@ -17,7 +17,6 @@ class SpartanWebhooks : JavaPlugin() {
     val webhookManager: WebhookManager by lazy { WebhookManager(this) }
 
     override fun onEnable() {
-
         val handler = ViolationHandler(this)
         fileManager.reload()
         if (server.pluginManager.getPlugin("PlaceholderAPI") != null) WebhooksExpansion(this, handler).register()
@@ -31,8 +30,9 @@ class SpartanWebhooks : JavaPlugin() {
         server.pluginManager.registerEvents(handler, this)
 
         BukkitCommandManager.create(this).registerCommand(WebhookCommand(this, handler))
-        webhookManager.load()
 
+        val period = if (getWebhookConfig().content.trim().isEmpty()) 40L else 80L
+        server.scheduler.runTaskTimerAsynchronously(this, webhookManager.run(), 0, period)
     }
 
     override fun onDisable() {

@@ -9,7 +9,6 @@ import net.ecoporium.webhooks.listener.ViolationHandler
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.command.CommandSender
-import org.bukkit.entity.Player
 
 @Command("webhooks")
 class WebhookCommand(private val plugin: SpartanWebhooks, private val handler: ViolationHandler) : BaseCommand() {
@@ -19,13 +18,6 @@ class WebhookCommand(private val plugin: SpartanWebhooks, private val handler: V
     fun reload(sender: CommandSender) {
         plugin.reloadConfigurations()
         sender.sendMessage(Component.text("Reloaded configuration files.", NamedTextColor.GREEN))
-    }
-
-    @SubCommand("violations")
-    @Permission("spartan-webhooks.commands.violations")
-    fun violations(sender: Player) {
-        sender.sendMessage(Component.text("Violations: ${handler.violationData[sender.uniqueId]}", NamedTextColor.YELLOW))
-        sender.sendMessage(Component.text("Webhooks: ${plugin.webhookManager.webhooks}", NamedTextColor.YELLOW))
     }
 
 }

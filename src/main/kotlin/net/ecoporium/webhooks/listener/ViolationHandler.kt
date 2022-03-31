@@ -24,11 +24,7 @@ class ViolationHandler(private val plugin: SpartanWebhooks) : Listener {
         }
 
         if ((violationData[event.player.uniqueId]?.values?.sum() ?: 0) >= plugin.getSettingsConfig().violationThreshold) {
-            plugin.webhookManager.webhooks.add(Pair(
-                plugin.getWebhookConfig().contentFor(event.player),
-                plugin.getWebhookConfig().embedFor(event.player)
-            ))
-
+            plugin.webhookManager.embeds.add(plugin.getWebhookConfig().embedFor(event.player))
             violationData.remove(event.player.uniqueId)
         }
     }

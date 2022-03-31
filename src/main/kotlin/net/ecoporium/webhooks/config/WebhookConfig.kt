@@ -13,10 +13,7 @@ import java.util.stream.Collectors
 
 class WebhookConfig(private val config: FileConfig) {
 
-    fun contentFor(player: Player?): String {
-        val content: String = config["content"]
-        return if (player == null) content else PlaceholderAPI.setPlaceholders(player, content)
-    }
+    val content: String = config["content"]
 
     fun embedFor(player: Player): WebhookEmbed {
         val rawFields: List<Config> = config["embed.fields"]
