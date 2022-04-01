@@ -26,7 +26,7 @@ is okay, but will never take place on this project.
 - Download in release is built with Java 17, and as such is not compatible with all versions of Java
 - Only supports Paper, not Spigot servers
 - Requires [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI)
-- Content section is sent once per grouping of embeds; placeholders replaced for user of first embed
+- Content section is sent once per grouping of embeds; placeholders not supported for this field
 
 ## Build Instructions
 - Clone the repository
