@@ -1,7 +1,7 @@
 <p align="center"><img src="https://i.imgur.com/8TGWdvP.png" alt="Spartan Webhooks Logo"/></p>  
 
-![](https://img.shields.io/github/downloads/bobby29831/SpartanWebhooks/total?color=blue&style=for-the-badge)
-![](https://img.shields.io/discord/928058065759113266?label=discord&logo=discord&style=for-the-badge)  
+[![](https://img.shields.io/github/downloads/bobby29831/SpartanWebhooks/total?color=blue&style=for-the-badge)](https://github.com/bobby29831/SpartanWebhooks/releases)
+[![](https://img.shields.io/discord/928058065759113266?label=discord&logo=discord&style=for-the-badge)](https://discord.gg/AHYXEN8qq3)  
 
 This version of Spartan Webhooks is a complete rewrite
 mainly in the Kotlin language for ease for programming.
