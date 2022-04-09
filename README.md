@@ -10,7 +10,7 @@ is okay, but will never take place on this project.
 
 ## Features
 * JSON based embed configuration
-    * Popular builders like [this one](https://glitchii.github.io/embedbuilder/) can now be utilized
+    * Popular builders like [this one](https://embedbuilder.nadekobot.me) can now be utilized
     * Supports non-embed messages too!
 * Embed sending now respects Discord's limits
     * Should now no longer trigger rate limiting errors (429s)
