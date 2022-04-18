@@ -10,7 +10,7 @@ is okay, but will never take place on this project.
 
 ## Features
 * JSON based embed configuration
-    * Popular builders like [this one](https://embedbuilder.nadekobot.me) can now be utilized
+    * Embed builders can now be used for configuration! (Be careful to maintain the object-array structure!)
     * Supports non-embed messages too!
 * Embed sending now respects Discord's limits
     * Should now no longer trigger rate limiting errors (429s)
