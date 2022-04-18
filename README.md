@@ -6,7 +6,12 @@
 This version of Spartan Webhooks is a complete rewrite
 mainly in the Kotlin language for ease for programming.
 Modifying the plugin to work on different platforms and versions
-is okay, but will never take place on this project.
+is okay, but will never take place on this project.  
+
+### Support
+You are welcome to join the Discord server in search of support from community members, or create posts in the Issues
+or Discussions sections, but I myself will provide no individual support to users unless provided with a specific
+error from console. I am here to maintain the plugin and keep it up-to-date, nothing else.  
 
 ## Features
 * JSON based embed configuration
