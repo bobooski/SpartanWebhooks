@@ -28,6 +28,20 @@ is okay, but will never take place on this project.
 - Requires [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI)
 - Content section is sent once per grouping of embeds; placeholders not supported for this field
 
+## Installation
+- Download the file `SpartanWebhooks-2.0-beta.jar` and place it in your `plugins` folder.
+- Ensure you have the `Spartan` and `PlaceholderAPI` plugin downloaded
+- Configure the `url` field in the `plugins/SpartanWebhooks/settings.toml` file
+- Run `/webhooks reload`
+- You're good to go! Edit the `plugins/SpartanWebhooks/webhook.json` file to your heart's content!  
+
+## Creating a Discord Webhook
+If for some strange reason you wish to use this plugin, but have no idea what a Discord Webhook is, how to create
+one, or how to get its URL which will be necessary to make this plugin work, you can check out Discord's own
+tutorial [here](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks). Please note that
+appending `/github` to the end of the URL is **ONLY** for webhooks coming from GitHub, and is not necessary
+for this plugin and will actually break it.
+
 ## Build Instructions
 - Clone the repository
 - Use the command `gradlew clean build` to build
