@@ -11,6 +11,7 @@ is okay, but will never take place on this project.
 Please use GitHub Issues or the GitHub Discussion page for support or inquiries, but note:
 * I don't have the time to provide independent troubleshooting support
 * I will not ever maintain the project on older versions, asking is pointless
+* I **will** provide support for issues with errors from console!
 
 ## Features
 * JSON based embed configuration
