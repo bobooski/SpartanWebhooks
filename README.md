@@ -8,9 +8,9 @@ Modifying the plugin to work on different platforms and versions
 is okay, but will never take place on this project.  
 
 ### Support
-You are welcome to join the Discord server in search of support from community members, or create posts in the Issues
-or Discussions sections, but I myself will provide no individual support to users unless provided with a specific
-error from console. I am here to maintain the plugin and keep it up-to-date, nothing else.  
+Please use GitHub Issues or the GitHub Discussion page for support or inquiries, but note:
+* I don't have the time to provide independent troubleshooting support
+* I will not ever maintain the project on older versions, asking is pointless
 
 ## Features
 * JSON based embed configuration
