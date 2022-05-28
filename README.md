@@ -34,7 +34,7 @@ Please use GitHub Issues or the GitHub Discussion page for support or inquiries,
 - Content section is sent once per grouping of embeds; placeholders not supported for this field
 
 ## Installation
-- Download the file `SpartanWebhooks-2.0-beta.jar` and place it in your `plugins` folder.
+- Download the file `SpartanWebhooks-2.0-release.jar` and place it in your `plugins` folder.
 - Ensure you have the `Spartan` and `PlaceholderAPI` plugin downloaded
 - Configure the `url` field in the `plugins/SpartanWebhooks/settings.toml` file
 - Run `/webhooks reload`
