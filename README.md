@@ -7,10 +7,14 @@ mainly in the Kotlin language for ease for programming.
 Modifying the plugin to work on different platforms and versions
 is okay, but will never take place on this project.  
 
-### Support
-Please use GitHub Issues or the GitHub Discussion page for support or inquiries, but note:
-* Support will no longer be provided, as this resource will soon be marked as an archive for unreleased reasons.
-* You will still be able to utilize the resource, and will be happy with the changes in the long run.
+## Spartan Integration
+SpartanWebhooks, or the main idea behind webhook support in Spartan
+thanks to the popular demand for this plugin to have greater compatibility
+and ease of use, has been directly implemented into the Spartan plugin.
+As of July 27th, 2022, all releases have been deleted, and no further
+work will be done on this project. Thank you to everyone who has helped
+to make this project a success! You helped show how wanted of a feature
+webhooks were to the point that they were implemented directly into Spartan!
 
 ## Features
 * JSON based embed configuration
